@@ -1,0 +1,47 @@
+<!-- npm으로 react, react-dom, next js 설치 전-->
+<html>
+  <body>
+    <div id="app"></div>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/jsx">
+      const app = document.getElementById("app")
+      function Header({title}) {
+        return <h1>{title}</h1>;
+      }
+
+      function HomePage() {
+        const [likes, setLikes] = React.useState(0);
+        const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
+        function handleClick(){
+          setLikes(likes + 1)
+        }
+        return(
+          <div>
+            <Header title="React 💙" />
+            <Header title="title"/>
+            <ul>
+              {names.map((name) => (
+                <li key={name}>{name}</li>
+              ))}
+            </ul>
+
+            <button onClick={handleClick}>Like({likes})</button>
+          </div>
+        )
+      }
+
+      ReactDOM.render(<HomePage />, app);
+    </script>
+  </body>
+</html>
+
+<!-- 
+function Header(props){ 
+  return <h1>{props.title}</h1> 점 표기법 
+  return <h1>`{Cool ${title}`}</h1> 템플릿 리터럴 
+  return title 함수 반환값 
+  return <h1>{title? title : 'Default'}</h1> 삼항 연산자 
+}
+-->
