@@ -18,19 +18,15 @@ export default function Home({ allPostsData }: any) {
         </Head>
         <section className={utilStyles.headingMd}>
           <p>My name is kdh3543 I`m a software engineer</p>
-          <p>
+          <div>
             (This is a sample website - you`ll be building a site like this one)
             <a href="https://github.com/kdh3543/nextjs_base_project">my site</a>
-            <div>
+            <p>
               Read <Link href={"/posts/first-post"}>this page!</Link>
-            </div>
-          </p>
+            </p>
+          </div>
         </section>
       </Layout>
     </>
   );
-}
-
-export async function getStaticProps() {
-  return {};
 }
